@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小王 · 个人作品集 | XIAO WANG PORTFOLIO</title>
+  <meta name="description" content="小王的个人作品集 —— 软件工程在读，关注 AI 辅助开发与大语言模型应用，展示项目作品与技能方向。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ 顶部导航 ============ -->
+  <header class="site-head" id="siteHead">
+    <div class="container site-head__inner">
+      <a class="brand" href="#home">
+        小王<span class="brand__dot">.</span>
+        <span class="brand__sub">PORTFOLIO '26</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="主导航">
+        <ul class="nav__links" id="navLinks">
+          <li><a href="#home" class="nav__link">首页</a></li>
+          <li><a href="#works" class="nav__link">作品</a></li>
+          <li><a href="#about" class="nav__link">关于</a></li>
+          <li><a href="#contact" class="nav__link nav__link--cta">联系我</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false" aria-controls="navLinks">
+        <span class="menu-btn__icon"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ 首屏 HERO ============ -->
+    <section class="hero" id="home">
+      <span class="hero__ghost" aria-hidden="true">作</span>
+
+      <div class="container hero__inner">
+        <p class="eyebrow reveal">个人作品集 · SELECTED WORKS</p>
+
+        <h1 class="hero__title reveal">
+          <span class="hero__hi">你好，我是</span>
+          小王<span class="accent">.</span>
+        </h1>
+
+        <p class="hero__role reveal">AI 辅助开发　／　大语言模型应用</p>
+
+        <p class="hero__bio reveal">
+          广州软件学院软件工程专业在读。主要关注 AI 辅助开发与大语言模型应用技术，
+          平时主要使用 Java 进行开发，也用 C# 完成过多个桌面应用程序。这里收录了我的项目实践。
+        </p>
+
+        <div class="hero__cta reveal">
+          <a href="#works" class="btn btn--solid">查看作品 <span aria-hidden="true">↓</span></a>
+          <a href="#contact" class="btn btn--text">联系我 <span aria-hidden="true">→</span></a>
+        </div>
+
+        <dl class="hero__stats reveal">
+          <div class="hero__stat">
+            <dt>当前方向</dt>
+            <dd><strong>AI · LLM</strong></dd>
+          </div>
+          <div class="hero__stat">
+            <dt>主力语言</dt>
+            <dd><strong>Java</strong></dd>
+          </div>
+          <div class="hero__stat">
+            <dt>所在城市</dt>
+            <dd><strong>广州</strong></dd>
+          </div>
+        </dl>
+      </div>
+
+      <a href="#works" class="hero__scroll" aria-label="向下滚动查看作品">
+        <span>SCROLL</span>
+        <i aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <div class="strip" aria-hidden="true"></div>
+
+    <!-- ============ 项目作品（由 js/projects.js 数据驱动渲染） ============ -->
+    <section class="works" id="works">
+      <div class="container">
+        <header class="sec-head">
+          <div class="sec-head__lead">
+            <p class="eyebrow">SELECTED WORKS</p>
+            <h2 class="sec-title">精选<span class="accent">作品</span></h2>
+          </div>
+          <p class="sec-head__note">
+            02 个项目　／　桌面应用　／　物联网<br>
+            作品持续更新中。
+          </p>
+        </header>
+
+        <div class="works__list" id="worksList">
+          <!-- 项目由 main.js 渲染 -->
+        </div>
+      </div>
+    </section>
+
+    <div class="strip" aria-hidden="true"></div>
+
+    <!-- ============ 关于我 ============ -->
+    <section class="about" id="about">
+      <div class="container">
+        <header class="sec-head">
+          <div class="sec-head__lead">
+            <p class="eyebrow">ABOUT ME</p>
+            <h2 class="sec-title">关于<span class="accent">我</span></h2>
+          </div>
+        </header>
+
+        <div class="about__grid">
+          <figure class="about__portrait reveal">
+            <div class="about__portrait-mark" aria-hidden="true">王</div>
+            <figcaption>小王　XIAO WANG — 广州</figcaption>
+          </figure>
+
+          <div class="about__content">
+            <p class="about__lead reveal">
+              我相信好的作品，<br>先被<strong>使用</strong>，再被<strong>记住</strong>。
+            </p>
+            <p class="about__p reveal">
+              我叫小王，是广州软件学院软件工程专业的在读学生。目前主要关注 AI 辅助开发与大语言模型应用技术，
+              平时主要使用 Java 进行开发，也熟悉 C#、Python、SQL 与前端基础技术。
+            </p>
+            <p class="about__p reveal">
+              在项目实践中，使用 C# 完成过多个 exe 桌面应用程序的开发，
+              这里收录了我的项目经历与技能方向，持续更新中。
+            </p>
+
+            <ul class="skills">
+              <li class="skill reveal">
+                <span class="skill__no">01</span>
+                <h3 class="skill__name">编程语言</h3>
+                <p class="skill__items">C# · Java · Python · SQL</p>
+              </li>
+              <li class="skill reveal">
+                <span class="skill__no">02</span>
+                <h3 class="skill__name">Web 技术</h3>
+                <p class="skill__items">HTML · CSS · JavaScript</p>
+              </li>
+              <li class="skill reveal">
+                <span class="skill__no">03</span>
+                <h3 class="skill__name">关注方向</h3>
+                <p class="skill__items">AI 辅助开发 · 大语言模型应用</p>
+              </li>
+            </ul>
+
+            <dl class="facts">
+              <div class="fact reveal">
+                <dt>教育背景</dt>
+                <dd>广州软件学院 · 软件工程 · 在读</dd>
+              </div>
+              <div class="fact reveal">
+                <dt>当前方向</dt>
+                <dd>AI 辅助开发 / 大语言模型应用</dd>
+              </div>
+              <div class="fact reveal">
+                <dt>所在城市</dt>
+                <dd>中国 · 广州</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 联系方式 ============ -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <p class="eyebrow eyebrow--light reveal">GET IN TOUCH</p>
+        <h2 class="contact__title reveal">
+          一起做点<br><span class="accent">有意思的东西。</span>
+        </h2>
+
+        <a class="contact__mail reveal" href="tel:12345678912">
+          12345678912
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <ul class="social reveal">
+          <li><a href="tel:12345678912">电话 <i>12345678912</i></a></li>
+          <li><a href="#">Email <i>（待补充）</i></a></li>
+          <li><a href="#">GitHub <i>（待补充）</i></a></li>
+          <li><a href="#">微信 <i>（待补充）</i></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 页脚 ============ -->
+  <footer class="site-foot">
+    <div class="container site-foot__inner">
+      <p>© <span id="year">2026</span> 小王 XIAO WANG · 保留所有权利</p>
+      <p class="site-foot__meta">使用原生 HTML / CSS / JavaScript 手工打造</p>
+      <a href="#home" class="site-foot__top">回到顶部 ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
