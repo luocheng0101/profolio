@@ -170,6 +170,36 @@
     if (el) el.textContent = new Date().getFullYear();
   }
 
+  /* ---------- 深浅色主题切换 ---------- */
+  var THEME_KEY = 'portfolio-theme';
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    var btn = document.getElementById('themeBtn');
+    if (btn) {
+      btn.setAttribute('aria-label', theme === 'dark' ? '切换到浅色模式' : '切换到深色模式');
+    }
+  }
+
+  function initTheme() {
+    var saved = null;
+    try { saved = localStorage.getItem(THEME_KEY); } catch (e) {}
+    if (saved !== 'dark' && saved !== 'light') {
+      saved = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    applyTheme(saved);
+
+    var btn = document.getElementById('themeBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
+    });
+  }
+
+  initTheme();
+
   /* ---------- 启动 ---------- */
   document.addEventListener('DOMContentLoaded', function () {
     renderWorks();

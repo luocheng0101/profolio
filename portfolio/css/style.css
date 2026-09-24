@@ -14,6 +14,12 @@
   --accent: #E2492B;      /* 朱橙强调色 */
   --accent-deep: #C43A1F;
 
+  --head-bg: rgba(244, 239, 230, .92);
+  --ghost-line: rgba(23, 19, 14, .12);
+  --media-bg: #E3DCCE;
+  --contact-bg: #17130E;
+  --contact-fg: #FAF7F0;
+
   --serif: "Noto Serif SC", "Source Han Serif SC", "Noto Serif CJK SC",
            "Songti SC", "STSong", "AR PL UMing CN", SimSun, "FangSong",
            Georgia, "Times New Roman", serif;
@@ -22,6 +28,20 @@
 
   --container: 1240px;
   --ease: cubic-bezier(.22, .7, .2, 1);
+}
+
+/* ---------- 深色主题变量 ---------- */
+[data-theme="dark"] {
+  --bg: #14110C;
+  --paper: #1E1A13;
+  --ink: #EFE9DC;
+  --muted: #A69B89;
+  --line: #3B3428;
+  --accent: #FF6B47;
+  --accent-deep: #E2492B;
+  --head-bg: rgba(20, 17, 12, .92);
+  --ghost-line: rgba(239, 233, 220, .1);
+  --media-bg: #241F16;
 }
 
 /* ---------- 基础重置 ---------- */
@@ -34,6 +54,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--ink);
+  transition: background .3s var(--ease), color .3s var(--ease);
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.75;
@@ -127,7 +148,7 @@ section { scroll-margin-top: 84px; }
 }
 .site-head.is-scrolled {
   padding: 12px 0;
-  background: rgba(244, 239, 230, .92);
+  background: var(--head-bg);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   border-bottom-color: var(--line);
@@ -200,6 +221,35 @@ section { scroll-margin-top: 84px; }
   color: #fff;
 }
 
+/* ---------- 主题切换按钮 ---------- */
+.head-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 110;
+}
+.theme-btn {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 1;
+  transition: transform .3s var(--ease), background .3s, color .3s, border-color .3s;
+}
+.theme-btn::before { content: "☾"; }
+[data-theme="dark"] .theme-btn::before { content: "☀"; }
+.theme-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  transform: rotate(-20deg);
+}
+
 /* 汉堡按钮（移动端） */
 .menu-btn {
   display: none;
@@ -243,7 +293,7 @@ section { scroll-margin-top: 84px; }
   font-size: clamp(14rem, 34vw, 32rem);
   line-height: .8;
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(23, 19, 14, .12);
+  -webkit-text-stroke: 1.5px var(--ghost-line);
   pointer-events: none;
   user-select: none;
 }
@@ -377,7 +427,7 @@ section { scroll-margin-top: 84px; }
 .work__media {
   position: relative;
   overflow: hidden;
-  background: #E3DCCE;
+  background: var(--media-bg);
 }
 .work__media img {
   transition: transform .8s var(--ease), filter .6s;
@@ -605,8 +655,8 @@ section { scroll-margin-top: 84px; }
 
 /* ---------- 联系方式（深色区块） ---------- */
 .contact {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--contact-bg);
+  color: var(--contact-fg);
   padding: clamp(90px, 11vw, 150px) 0 clamp(70px, 8vw, 110px);
 }
 .contact__title {
@@ -659,7 +709,7 @@ section { scroll-margin-top: 84px; }
 
 /* ---------- 页脚 ---------- */
 .site-foot {
-  background: var(--ink);
+  background: var(--contact-bg);
   color: rgba(250, 247, 240, .55);
   border-top: 1px solid rgba(250, 247, 240, .14);
   padding: 26px 0;
